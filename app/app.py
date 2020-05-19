@@ -44,7 +44,7 @@ def capture_image():
     filename = request.form.get('filename')
     arguments = request.form.get('arguments')
 
-    cmd = f"raspistill --nopreview -t 1 -o {filename} {arguments}"
+    cmd = "raspistill --nopreview -t 1 -o %s %s" % (filename, arguments)
     print(cmd)
 
     retcode = os.system(cmd)

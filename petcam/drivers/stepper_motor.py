@@ -52,6 +52,10 @@ def setStep(w1, w2, w3, w4):
     coil_B_2_pin.value = w4
 
 
+def off():
+    setStep(0, 0, 0, 0)
+
+
 if __name__ == "__main__":
     while True:
         user_delay = input("Delay between steps (milliseconds)?")

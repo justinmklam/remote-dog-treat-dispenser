@@ -7,9 +7,7 @@ required_pkgs = [
 
 # Raspberry Pi specific packages
 if "arm" in platform.uname().machine:
-    required_pkgs.append(
-        ["picamera"]
-    )
+    required_pkgs.append([])
 
 setup(
     name="petcam",

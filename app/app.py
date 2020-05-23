@@ -65,4 +65,9 @@ def give_treat():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', threaded=True)
+    if os.environ.get("FLASK_DEBUG"):
+        port = 5000
+    else:
+        port = 80
+
+    app.run(host='0.0.0.0', port=port, threaded=True)

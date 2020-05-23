@@ -3,7 +3,7 @@ from importlib import import_module
 import time
 
 import os
-from flask import Flask, render_template, Response, request, send_file
+from flask import Flask, render_template, Response, request, send_file, jsonify
 
 # import camera driver. Otherwise use pi camera by default
 if os.environ.get('CAMERA'):
@@ -12,9 +12,10 @@ else:
     from camera_pi import Camera
 
 import utils
+from petcam.dispenser import Dispenser
 
 app = Flask(__name__)
-
+dispenser = Dispenser()
 
 @app.route('/')
 def index():
@@ -54,6 +55,14 @@ def capture_image():
         return send_file(filename, mimetype='image/jpg')
     else:
         return "Error"
+
+
+@app.route('/give_treat', methods=["POST"])
+def give_treat():
+    dispenser.move()
+
+    return jsonify(success=True)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', threaded=True)

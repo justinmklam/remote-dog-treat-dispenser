@@ -4,7 +4,7 @@ from base_camera import BaseCamera
 
 
 class Camera(BaseCamera):
-    video_source = 0
+    video_source = -1   # last camera device that was connected (0 is not always available)
 
     def __init__(self):
         if os.environ.get('OPENCV_CAMERA_SOURCE'):

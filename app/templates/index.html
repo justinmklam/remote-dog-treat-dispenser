@@ -26,9 +26,17 @@
         <img id="video-feed" src="{{ url_for('video_feed') }}">
       </div>
     </div>
-    <div class="section">
-      <button id="btn-give-treat" class="btn btn-success">Give Treat</button>
-      <button id="btn-capture-image" class="btn btn-secondary">Capture Image</button>
+    <div class="container">
+      <div class="columns">
+        <div class="column col text-right">
+          <button id="btn-give-treat" class="btn btn-success">Give Treat</button>
+        </div>
+        <div class="column col text-left">
+          <form method="POST" action="/capture_image">
+            <input class="btn btn-secondary" type="submit" value="Capture Image">
+          </form>
+          </div>
+      </div>
     </div>
   </div>
 

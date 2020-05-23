@@ -1,21 +1,38 @@
-<html>
-  <head>
-    <title>Video Streaming Demonstration</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-  </head>
-  <body>
-    <div class="page-content">
-      <h1>Raspberry Pi Camera Streamer</h1>
-      <div>
-        <img src="{{ url_for('video_feed') }}">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Nala Cam | Remote Treat Dispenser</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/spectre.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+<body>
+  <div class="page-content">
+    <div class="section">
+      <div class="grid-hero container grid-lg text-center" id="overview">
+        <h1>The Nala Cam</h1>
       </div>
-      <br>
-      <div class="form-input">
-        <form method="POST" action="/capture_image">
-          <input type="submit" value="Capture Image">
-        </form>
-      </div>
-      <button>Hi</button>
     </div>
-  </body>
+
+    <div class="section">
+      <div>
+        <img id="video-feed" src="{{ url_for('video_feed') }}">
+      </div>
+    </div>
+    <div class="section">
+      <button id="btn-give-treat" class="btn btn-success">Give Treat</button>
+      <button id="btn-capture-image" class="btn btn-primary">Capture Image</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
 </html>

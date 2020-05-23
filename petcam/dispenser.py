@@ -1,4 +1,9 @@
-import petcam.drivers.stepper_motor as sm
+import os
+
+if os.environ.get('MOCK'):
+    import petcam.mocks.stepper_motor as sm
+else:
+    import petcam.drivers.stepper_motor as sm
 
 
 class Dispenser:

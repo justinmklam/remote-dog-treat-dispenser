@@ -1,9 +1,16 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Fira Sans, Verdana, Geneva, Tahoma, sans-serif
 }
 
 .page-content {
-    text-align: center
+    text-align: center;
+    margin-top: 50px;
+}
+
+#video-feed {
+    width: 600px;
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 input[type=text] {
@@ -12,3 +19,17 @@ input[type=text] {
     margin: 8px 0;
     box-sizing: border-box;
   }
+
+@media (max-width: 600px) {
+    .page-content {
+        margin-top: 15px;
+    }
+
+    #video-feed {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}

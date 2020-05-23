@@ -42,7 +42,7 @@ def video_feed():
 def capture_image():
     utils.write_boolean_to_file("camera_state", False)
 
-    filename = request.form.get('filename', "image.jpg")
+    filename = request.form.get('filename', "nalacam.jpg")
     arguments = request.form.get('arguments', "")
 
     cmd = "raspistill --nopreview -t 1 -o %s %s" % (filename, arguments)

@@ -23,3 +23,13 @@ Remote port forward to [serveo.net](http://serveo.net/):
 # Forwarding HTTP traffic from https://treats-for-nala.serveo.net
 # Press g to start a GUI session and ctrl-c to quit.
  ```
+
+## Development
+
+Create `app/.env` and add the following contents to run the app with mocked hardware dependencies:
+
+```bash
+export FLASK_DEBUG=true
+export MOCK=true
+export CAMERA=opencv
+```

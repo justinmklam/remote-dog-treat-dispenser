@@ -19,6 +19,11 @@ var App = {
     },
 
     onGiveTreatClicked: function () {
+        App.components.btnGiveTreat.classList.add("loading");
+        setTimeout(function() {
+            App.components.btnGiveTreat.classList.remove("loading");
+        }, 1000);
+
         console.log("give treat")
         fetch(App.routes.giveTreat, {method: "POST"});
     }

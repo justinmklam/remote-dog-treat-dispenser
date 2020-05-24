@@ -1,0 +1,13 @@
+[Unit]
+Description=Serveo Reverse Tunneling
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=/usr/bin/autossh -M 0 -R treats-for-nala:80:localhost:80 serveo.net
+
+[Install]
+WantedBy=multi-user.target
